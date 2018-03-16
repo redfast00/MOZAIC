@@ -7,28 +7,6 @@ It aims to provide a flexible platform to host your very own AI competition. Jus
 
 Eventually MOZAIC should be very modular, so that you can provide a custom-tailored experience for your competitors, without having to worry about the heavy lifting.
 
-## Features
-
-For now MOZAIC is still in its early stages, but at Zeus WPI we're already getting it ready to support our own AI competition. As the platfrom matures, our specific use-case will be factored out and more features will be added.
-
-Current and planned features:
-
-- [ ] Generic over game rules
-  - [ ] implemented in Rust
-  - [ ] ...
-- [ ] Game logging
-- [ ] Visualizers for your game
-- [ ] Uploading bots
-  - [ ] Python or something
-  - [ ] Any language, really
-- [ ] Fancy website
-- [ ] Network play
-- [ ] Flexible and performant game server
-- [ ] Friendly electron client
-  - [ ] handles network play
-  - [ ] "bot management"
-- [ ] Ranking bots
-
 ## Setup
 
 ### Gameserver
@@ -50,13 +28,36 @@ Current and planned features:
 **Note:** Do the setup for the gameserver first
 
 1. Install Node v8 and npm.
-1. Go the `planetwars\client` directory
+1. Go the `planetwars/client` directory
 1. Install dependencies with `npm install`.
 1. Go the `.\bin` dir and symlink the gameserver with:
-    * Linux -  `ln -s ../../../gameserver/target/release/mozaic_bot_driver`
-    * Windows -  `mklink bot_driver.exe ..\..\..\gameserver\target\release\mozaic_bot_driver.exe`
+    - Linux -  `ln -s ../../../gameserver/target/release/mozaic_bot_driver`
+    - Windows -  `mklink bot_driver.exe ..\..\..\gameserver\target\release\mozaic_bot_driver.exe`
 1. Go back the `client` dir and run `npm run dev`.
 1. An electron client should be at your disposal!
+
+1. If this doesn't go as planned you can use yarn:
+1. Install yarn
+    - Debian/Ubuntu
+    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    - sudo apt-get update && sudo apt-get install --no-install-recommends yarn
+    - Other OS: https://yarnpkg.com/lang/en/docs/install/
+1. Go to the `planetwars/client` directory
+1. Install dependencies with `yarn install`
+1. Go the `.\bin` dir and symlink the gameserver with:
+    - Linux -  `ln -s ../../../gameserver/target/release/mozaic_bot_driver`
+    - Windows -  `mklink bot_driver.exe ..\..\..\gameserver\target\release\mozaic_bot_driver.exe`
+1. Go back the `client` dir and run `npm run dev`.
+1. An electron client should be at your disposal!
+
+### Website
+
+1. Install rust nightly `curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly`
+1. Go to the `planetwars/web/` directory
+1. Install the dependencies with `npm install`
+1. Run `npm start` and `npm run watch` in different terminals.
+1. Website should be active on `http://localhost:8000`
 
 ## Contact
 
