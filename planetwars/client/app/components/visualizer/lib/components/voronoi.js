@@ -290,7 +290,7 @@ function initVoronoi(turns, colorFunction, box) {
             poly.maybeStart(layer, poly.polygon[si], poly.polygon[sie], poly.owner, target, data, []);
             polygonPoints.push({
               target: target,
-              color: colorFunction(poly.owner)
+              color: (poly.owner) ? colorFunction(poly.owner) : "#ffffff00"
             });
           }
         }
