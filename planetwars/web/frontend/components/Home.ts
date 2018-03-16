@@ -54,10 +54,18 @@ const Teaser: React.SFC<{}> = (props) => {
 
 const CodePlayWin: React.SFC<{}> = (props) => {
   return div('#code-play-win', [
-    h(CPWItem, { name: 'code', text: 'Code'} ),
-    h(CPWItem, { name: 'rocket', text: 'Play'}),
-    h(CPWItem, { name: 'trophy', text: 'Win'})
+    h(LinkItem, {to: '/code', item: h(CPWItem, { name: 'code', text: 'Code'} )}),
+    h(LinkItem, {to: '/play', item: h(CPWItem, { name: 'rocket', text: 'Play'} )}),
+    h(LinkItem, {to: '/win', item: h(CPWItem, { name: 'trophy', text: 'Win'} )}),
   ]);
+}
+
+interface LinkItemProps { to: string, item: React.ReactElement<any> }
+const LinkItem: React.SFC<LinkItemProps> = (props) => {
+  return h(Link, 
+    {to: props.to,},
+    [props.item],
+  );
 }
 
 interface ICPWItemProps { name: string, text: string }
