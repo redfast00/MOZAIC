@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as FA from 'react-fontawesome';
 import { Link } from 'react-router-dom';
-import { h, h1, h2, div, section, img, p, span } from 'react-hyperscript-helpers';
+import { h, h1, h2, div, section, img, p, span, hr, h3 } from 'react-hyperscript-helpers';
 import { Hero, HeroBody, HeroFooter, HeroHeader, Container, Button } from 'bloomer';
 
 import Navbar from './Navbar';
@@ -22,6 +22,7 @@ export default class Home extends React.Component<{}, {}> {
             h(CodePlayWin),
             h(Intro),
             h(GetStartedButton),
+            h(UpcomingEvents),
           ])
         ])
       ]),
@@ -57,6 +58,27 @@ const CodePlayWin: React.SFC<{}> = (props) => {
     h(LinkItem, {to: '/code', item: h(CPWItem, { name: 'code', text: 'Code'} )}),
     h(LinkItem, {to: '/play', item: h(CPWItem, { name: 'rocket', text: 'Play'} )}),
     h(LinkItem, {to: '/win', item: h(CPWItem, { name: 'trophy', text: 'Win'} )}),
+  ]);
+}
+
+const UpcomingEvents: React.SFC<{}> = (props) => {
+  return div('#events', [
+    h2('.subtitle.is-size-4', ['Coming events']),
+    hr(),
+    h(LinkItem, {to: '/26-03', item: 
+      h(Event, {title: "introduction", date: "26 March", item: h2('.event-item', ['test'])})
+    }),
+  ]);
+}
+
+interface EventProps { date: string, item: React.ReactElement<any>, title: string }
+const Event: React.SFC<EventProps> = (props) => {
+  return div('.event', [
+    div('.event-header', [
+      h2('.subtitle.is-size-3 .event-title', [props.title]),
+      h2('.subtitle.is-size-5', [props.date]),
+    ]),
+    props.item,
   ]);
 }
 

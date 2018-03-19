@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import Code from './components/Code';
 import Play from './components/Play';
 import Win from './components/Win';
+import Introduction from './components/Introduction';
 
 export default () => (
   h(App, [
@@ -38,6 +39,10 @@ export default () => (
         path: '/play',
         component: Play
       }),
+      h(Route, {
+        path: '/26-03',
+        component: Introduction
+      })
     ])
   ])
 );

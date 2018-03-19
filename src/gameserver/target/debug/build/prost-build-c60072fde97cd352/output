@@ -1,0 +1,4 @@
+cargo:rustc-env=PROTOC=/media/Data/Projects/MOZAIC/src/gameserver/target/debug/build/prost-build-c60072fde97cd352/out/protoc/bin/protoc
+cargo:rustc-env=PROTOC_INCLUDE=/media/Data/Projects/MOZAIC/src/gameserver/target/debug/build/prost-build-c60072fde97cd352/out/protoc/include
+cargo:rerun-if-env-changed=PROTOC
+cargo:rerun-if-env-changed=PROTOC_INCLUDE
