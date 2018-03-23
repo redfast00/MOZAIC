@@ -4,7 +4,7 @@ import * as React from 'react';
 import { div, h, li, span, ul, p, button, input, form, label } from 'react-hyperscript-helpers';
 const styles = require('./Matches.scss');
 
-type LogLoader = (string) => void;
+type LogLoader = (files: FileList) => void;
 
 // TODO: Support loading multiple files
 export class MatchImporter extends React.Component<{ loadLogs: LogLoader }> {
